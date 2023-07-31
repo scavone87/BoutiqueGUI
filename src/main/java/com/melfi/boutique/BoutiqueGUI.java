@@ -2,6 +2,7 @@ package com.melfi.boutique;
 
 import com.formdev.flatlaf.FlatIntelliJLaf;
 import com.formdev.flatlaf.FlatDarculaLaf;
+import com.formdev.flatlaf.themes.FlatMacDarkLaf;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -428,9 +429,10 @@ public class BoutiqueGUI extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-                    //UIManager.setLookAndFeel(new FlatDarculaLaf());
+                    //UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+                    UIManager.setLookAndFeel(new FlatMacDarkLaf());
                 } catch (Exception ignored) {
+                    System.err.println( "Failed to initialize LaF" );
                 }
 
                 new BoutiqueGUI().setVisible(true);
